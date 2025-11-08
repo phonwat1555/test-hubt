@@ -17,11 +17,13 @@
             background-color: #f4f4f9;
             color: #333;
             display: flex;
+            flex-direction: column; /* เพิ่ม: เพื่อให้ footer อยู่ข้างใต้ */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
+            margin: 0; /* เพิ่ม: เพื่อลบขอบขาว */
         }
 
         #quiz-container {
@@ -207,12 +209,17 @@
 
         .hidden {
             display: none;
-            /*
-            opacity: 0;
-            transform: scale(0.95);
-            pointer-events: none;
-            position: absolute;
-            */
+        }
+
+        /* เพิ่ม: สไตล์สำหรับ Footer */
+        #page-footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+            color: #6c757d; 
+            margin-top: 20px; 
+            flex-shrink: 0; /* ป้องกัน footer หดตัว */
         }
     </style>
 </head>
@@ -249,6 +256,11 @@
             <button id="restart-btn">ทำแบบทดสอบใหม่</button>
         </div>
     </div>
+
+    <!-- เพิ่ม: HTML Footer -->
+    <footer id="page-footer">
+        จัดทำโดย : นางณัฎฐาณิชกาญ เวทโรจณรัตย์
+    </footer>
 
     <script>
         // --- 1. ฐานข้อมูลคำถาม ---
@@ -454,7 +466,7 @@
                     "๓ ยาม (๐๓.๐๐น.) ถึง ย่ำรุ่ง (๐๖.๐๐น.) สมุฏฐานวาโย",
                     "ยาม ๑ (๒๑.๐๐น.) ถึง ๒ ยาม (๒๔.๐๐น.) สมุฏฐานอาโป พิกัดดี"
                 ],
-                correctAnswer: "ยาม ๑ (๒๑.๐๐น.) ถึง ๒ ยาม (๒๔.๐๐ น.) สมุฏฐานอาโป พิกัดโลหิต"
+                correctAnswer: "ยาม 1 (๒๑.๐๐น.) ถึง ๒ ยาม (๒๔.๐๐ น.) สมุฏฐานอาโป พิกัดโลหิต"
             },
             {
                 question: "25. ประเทศสมุฏฐาน คนเกิดในประเทศที่เป็นน้ำเค็มเปือกตม เรียกว่าประเทศอะไร และสมุฏฐานอะไร",
